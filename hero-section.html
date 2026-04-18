@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS Graphic Design & Printing | Hero</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B2FC9',
+                        'primary-dark': '#6B1FAA',
+                        secondary: '#E8601C',
+                        'secondary-dark': '#C04E15',
+                        background: '#fcf9f8',
+                        surface: '#f6f3f2',
+                        brandText: '#1c1b1b',
+                    },
+                    fontFamily: {
+                        headlines: ['Plus Jakarta Sans', 'sans-serif'],
+                        body: ['Manrope', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'brand': '0 24px 48px rgba(28,27,27,0.06)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .text-glow {
+            text-shadow: 0 0 40px rgba(139, 47, 201, 0.4);
+        }
+        .btn-gradient {
+            background: linear-gradient(45deg, #6B1FAA, #8B2FC9);
+        }
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* No 1px solid border rule - using outlines or shadows instead */
+        .pill-border {
+            outline: 2px solid rgba(139, 47, 201, 0.3);
+            outline-offset: -2px;
+        }
+        .hero-title {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+        }
+        .mobile-menu-hidden {
+            transform: translateY(-20px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #hero-preview {
+            background-image: url('hero.png');
+        }
+    </style>
+</head>
+<body class="bg-background text-brandText font-body">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-glass h-20 shadow-brand">
+        <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="RS Graphic Design Logo" class="h-[44px] w-auto object-contain">
+                <span class="font-headlines font-extrabold text-xl tracking-tight hidden sm:block">RS Graphic Design</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-10">
+                <a href="#home" class="text-primary font-extrabold hover:text-secondary transition-colors">Home</a>
+                <a href="#work" class="text-primary font-extrabold hover:text-secondary transition-colors">Work</a>
+                <a href="#services" class="text-primary font-extrabold hover:text-secondary transition-colors">Services</a>
+                <a href="#about" class="text-primary font-extrabold hover:text-secondary transition-colors">About</a>
+                <a href="#contact" class="text-primary font-extrabold hover:text-secondary transition-colors">Contact</a>
+            </div>
+
+            <!-- Desktop CTA -->
+            <div class="hidden md:block">
+                <button 
+                    data-target="#contact"
+                    class="btn-gradient text-white px-8 py-3 rounded-full font-bold shadow-brand hover:opacity-90 transition-opacity"
+                >
+                    Get a Quote
+                </button>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="menu-toggle" class="md:hidden text-primary p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m4 6h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-white/95 backdrop-blur-xl md:hidden py-8 px-6 flex flex-col gap-6 shadow-brand mobile-menu-hidden">
+            <a href="#home" class="mobile-link text-primary font-extrabold text-xl">Home</a>
+            <a href="#work" class="mobile-link text-primary font-extrabold text-xl">Work</a>
+            <a href="#services" class="mobile-link text-primary font-extrabold text-xl">Services</a>
+            <a href="#about" class="mobile-link text-primary font-extrabold text-xl">About</a>
+            <a href="#contact" class="mobile-link text-primary font-extrabold text-xl">Contact</a>
+            <button class="btn-gradient text-white py-4 rounded-full font-bold shadow-brand">
+                Get a Quote
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center overflow-hidden">
+        <!-- Background Layer -->
+        <div id="hero-preview" class="absolute inset-0 bg-cover bg-center sm:bg-right bg-no-repeat transition-all duration-700 ease-in-out">
+            <!-- Dark Overlay Gradient -->
+            <div class="absolute inset-0 bg-black/50 sm:hidden"></div>
+            <div class="absolute inset-0 hidden sm:block" style="background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.20) 100%);"></div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 w-full px-6 md:pl-24 lg:pl-[6rem] py-20 text-center md:text-left">
+            <div class="md:max-w-[55%] flex flex-col items-center md:items-start">
+                <!-- Pill Tag -->
+                <div class="px-4 py-1.5 pill-border text-white text-[10px] sm:text-xs font-headlines font-bold uppercase tracking-[0.2em] rounded-full bg-white/5 backdrop-blur-sm mb-8">
+                    Established in Lalitpur
+                </div>
+
+                <!-- Headline -->
+                <h1 class="font-headlines font-extrabold text-white hero-title max-w-[600px] mb-8 leading-[1.1]">
+                    Transforming Ideas into <br class="hidden sm:block">
+                    <span class="text-primary italic text-glow">Visual Excellence</span>
+                </h1>
+
+                <!-- Subtext -->
+                <p class="text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-[500px] mb-12">
+                    Professional Graphic Design & High-Quality Printing Services in Lalitpur, Nepal
+                </p>
+
+                <!-- Actions -->
+                <div class="flex flex-col sm:flex-row items-center md:items-start gap-4 w-full sm:w-auto">
+                    <button 
+                        data-target="#work"
+                        class="w-full sm:w-auto bg-secondary text-white px-10 py-4 rounded-full font-bold shadow-brand hover:opacity-90 transition-all text-center"
+                    >
+                        View Portfolio
+                    </button>
+                    <button 
+                        data-target="#contact"
+                        class="w-full sm:w-auto px-10 py-4 rounded-full font-bold border-2 border-white/60 text-white hover:bg-white hover:text-primary transition-all backdrop-blur-sm text-center"
+                    >
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Image Upload (Top Right) -->
+        <div class="absolute top-24 right-6 z-20">
+            <label for="hero-upload" class="bg-white/10 hover:bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-[10px] uppercase font-bold text-white/60 tracking-widest cursor-pointer transition-all border border-white/10">
+                Change Hero Image
+                <input type="file" id="hero-upload" class="hidden" accept="image/*">
+            </label>
+        </div>
+    </section>
+
+    <!-- Landing Page Placeholder Logic -->
+    <script>
+        // Smooth Scroll Logic
+        document.querySelectorAll('a[href^="#"], button[data-target^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href') || this.getAttribute('data-target');
+                if (targetId && targetId !== '#') {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const navOffset = 80;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navOffset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Hamburger Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isHidden = mobileMenu.classList.contains('mobile-menu-hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('mobile-menu-hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                mobileMenu.classList.add('mobile-menu-hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m4 6h16');
+            }
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        // Close menu on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('mobile-menu-hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Hero Image Upload Logic using FileReader API
+        const heroUpload = document.getElementById('hero-upload');
+        const heroPreview = document.getElementById('hero-preview');
+
+        heroUpload.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    heroPreview.style.backgroundImage = `url('${event.target.result}')`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Dummy showPage function
+        function showPage(pageId) {
+            console.log(`Navigating to ${pageId}...`);
+            // This would normally trigger a page change or scroll
+        }
+
+        // Active Link Highlighting (Minimal)
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body>
+</html>

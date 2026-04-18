@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS Graphic Design & Printing | Lalitpur's Premier Print House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#8B2FC9',
+                        'primary-dark': '#6B1FAA',
+                        secondary: '#E8601C',
+                        'secondary-dark': '#C04E15',
+                        brandBlack: '#0A0E1A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(139, 47, 201, 0.4);
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (min-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-brandBlack font-sans antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="logo.png" alt="RS Graphic Design Logo" class="h-[44px] w-auto object-contain">
+                <span class="font-extrabold text-xl tracking-tight hidden sm:block">RS Graphic Design</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10">
+                <a href="#work" class="text-primary font-bold hover:text-secondary transition-colors">Work</a>
+                <a href="#services" class="text-primary font-bold hover:text-secondary transition-colors">Services</a>
+                <a href="#about" class="text-primary font-bold hover:text-secondary transition-colors">About</a>
+                <a href="#contact" class="text-primary font-bold hover:text-secondary transition-colors">Contact</a>
+            </div>
+
+            <button 
+                data-target="#contact"
+                class="bg-secondary text-white px-6 py-2.5 rounded-full font-bold hover:bg-orange-600 transition-all shadow-lg shadow-secondary/20"
+            >
+                Get a Quote
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="hero.png" 
+                 alt="Workplace" 
+                 class="w-full h-full object-cover object-center sm:object-right"
+                 referrerPolicy="no-referrer">
+            <div class="absolute inset-0 bg-black/50 md:hidden"></div>
+            <div class="absolute inset-0 hidden md:block" style="background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.20) 100%);"></div>
+        </div>
+
+        <div class="relative z-10 w-full px-6 md:pl-24 lg:pl-[6rem] py-20 text-center md:text-left">
+            <div class="md:max-w-[55%] flex flex-col items-center md:items-start">
+                <span class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md text-white/80 text-xs font-bold uppercase tracking-widest rounded-full mb-8 border border-white/20">
+                    Established in Lalitpur
+                </span>
+                <h1 class="text-4xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6 max-w-[600px]">
+                    Transforming Ideas into <br class="hidden sm:block"/>
+                    <span class="text-primary text-glow">Visual Excellence</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/80 mb-10 max-w-[500px] leading-relaxed">
+                    Professional Graphic Design & High-Quality Printing Services in Lalitpur, Nepal
+                </p>
+                <div class="flex flex-col sm:flex-row items-center md:items-start gap-4 w-full sm:w-auto">
+                    <button 
+                        data-target="#work"
+                        class="w-full sm:w-auto bg-secondary text-white px-10 py-4 rounded-full font-bold hover:bg-orange-600 transition-all text-center"
+                    >
+                        View Portfolio
+                    </button>
+                    <button 
+                        data-target="#contact"
+                        class="w-full sm:w-auto border-2 border-primary text-primary px-10 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all text-center"
+                    >
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="about.png" 
+                             alt="Designer" 
+                             class="w-full h-full object-cover object-top"
+                             referrerPolicy="no-referrer">
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-xl border-l-4 border-secondary max-w-[240px]">
+                        <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest mb-1">Since 2024</p>
+                        <p class="font-extrabold text-brandBlack leading-tight">Lalitpur's Premier Print House</p>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">
+                        The Artisan's Touch <br/>
+                        in <span class="text-secondary">Every Pixel</span>.
+                    </h2>
+                    <div class="text-gray-600 space-y-4 text-lg leading-relaxed">
+                        <p>
+                            At RS Graphic Design & Printing, we blend professional expertise with a passion for creative storytelling. Our studio specializes in high-end graphic design and precision printing, helping brands in Lalitpur and beyond achieve visual excellence.
+                        </p>
+                        <p>
+                            From initial concept to final tangible output, we ensure every detail reflects quality. Whether it's crafting a unique brand identity or executing large-scale print projects, our focus remains on providing artisanal quality in a digital-first world.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest">Location</p>
+                                <p class="font-bold text-brandBlack">Chapagaon-11, Lalitpur</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest">Contact</p>
+                                <p class="font-bold text-brandBlack">977-9841382376</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-12 pt-8 border-t border-gray-100">
+                        <div>
+                            <p class="text-4xl font-black text-primary mb-1">10+</p>
+                            <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest">Years Experience</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-black text-secondary mb-1">500+</p>
+                            <p class="text-[10px] uppercase font-bold text-gray-400 tracking-widest">Projects Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-primary mb-4">Crafted with Purpose</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Specialized services designed to take your brand from digital concept to tangible reality.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 20 20"/><path d="m5 16 2 2"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Graphic Design</h3>
+                    <p class="text-gray-500 mb-6">Custom logo design, creative visual identity systems, and professional marketing materials that resonate.</p>
+                    <button class="flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all uppercase text-xs tracking-widest">
+                        Learn More 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Printing Services</h3>
+                    <p class="text-gray-500 mb-6">High-definition offset and digital printing for business cards, brochures, and large-format materials.</p>
+                    <button class="flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all uppercase text-xs tracking-widest">
+                        Learn More 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a7 7 0 1 0 10 10"/><path d="M12 22a7 7 0 1 0-10-10"/><path d="M12 8a4 4 0 1 0 4 4"/><path d="M12 16a4 4 0 1 0-4-4"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Branding</h3>
+                    <p class="text-gray-500 mb-6">Comprehensive brand strategy, naming, and personality development to make your business stand out.</p>
+                    <button class="flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all uppercase text-xs tracking-widest">
+                        Learn More 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="work" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-primary mb-8">Our Recent Work</h2>
+                <div class="flex justify-center gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-400 overflow-x-auto pb-4">
+                    <button class="filter-btn active text-secondary border-b-2 border-secondary pb-1 whitespace-nowrap" onclick="filterPortfolio('all')">All Projects</button>
+                    <button class="filter-btn hover:text-primary whitespace-nowrap transition-colors" onclick="filterPortfolio('logo')">Logo Design</button>
+                    <button class="filter-btn hover:text-primary whitespace-nowrap transition-colors" onclick="filterPortfolio('printing')">Printing</button>
+                    <button class="filter-btn hover:text-primary whitespace-nowrap transition-colors" onclick="filterPortfolio('branding')">Branding</button>
+                </div>
+            </div>
+
+            <div class="portfolio-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="portfolio-item group relative overflow-hidden rounded-xl w-full" data-category="branding">
+                    <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600" 
+                         alt="Branding Stationery" class="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer">
+                </div>
+                <div class="portfolio-item group relative overflow-hidden rounded-xl w-full" data-category="logo">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600" 
+                         alt="Logo Design" class="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer">
+                </div>
+                <div class="portfolio-item group relative overflow-hidden rounded-xl w-full" data-category="printing">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" 
+                         alt="Printing Brochures" class="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer">
+                </div>
+                <div class="portfolio-item group relative overflow-hidden rounded-xl w-full" data-category="branding">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600" 
+                         alt="Abstract Creative" class="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer">
+                </div>
+                <div class="portfolio-item group relative overflow-hidden rounded-xl w-full" data-category="printing">
+                    <img src="https://images.unsplash.com/photo-1612690669207-fed642192c40?w=600" 
+                         alt="Business Cards" class="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer">
+                </div>
+                <div class="portfolio-item group relative overflow-hidden rounded-xl w-full" data-category="printing">
+                    <img src="https://images.unsplash.com/photo-1524386416438-98b7c7b27a64?w=600" 
+                         alt="Posters" class="w-full h-[250px] object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" referrerPolicy="no-referrer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div class="space-y-12">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-primary mb-6">Let's Create Together</h2>
+                        <p class="text-gray-500 text-lg leading-relaxed">
+                            Have a vision? We have the tools. Visit our studio or send us a message to start your creative journey.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="text-secondary mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Studio Location</h4>
+                                <p class="text-gray-500">Chapagaon-11, Lalitpur, Nepal</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-secondary mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Phone Support</h4>
+                                <p class="text-gray-500">+977-9841382376</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-secondary mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email Us</h4>
+                                <p class="text-gray-500">hello@rsgraphic.com.np</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aspect-video rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074" alt="Map View" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-2xl">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase font-bold text-primary tracking-widest">Your Name</label>
+                                <input type="text" placeholder="John Doe" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase font-bold text-primary tracking-widest">Email Address</label>
+                                <input type="email" placeholder="john@example.com" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase font-bold text-primary tracking-widest">Service Needed</label>
+                            <select class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none">
+                                <option>Graphic Design</option>
+                                <option>Printing</option>
+                                <option>Branding</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase font-bold text-primary tracking-widest">Message</label>
+                            <textarea placeholder="Tell us about your project..." rows="4" class="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none"></textarea>
+                        </div>
+                        <button class="w-full bg-secondary text-white py-4 rounded-full font-bold text-lg hover:bg-orange-600 shadow-xl shadow-secondary/20 transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brandBlack text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/5">
+                <div class="md:col-span-6 space-y-6">
+                    <div class="flex items-center gap-2">
+                        <img src="logo.png" alt="RS Graphic Design Logo" class="h-[36px] w-auto object-contain">
+                        <span class="font-extrabold text-xl tracking-tight">RS Graphic Design</span>
+                    </div>
+                    <p class="text-gray-500 max-w-sm">Excellence in visual communication and physical print craftsmanship based in the heart of Lalitpur.</p>
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-6">
+                    <h5 class="text-[10px] uppercase font-bold text-gray-400 tracking-widest">Navigation</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="#work" class="hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3 space-y-6">
+                    <h5 class="text-[10px] uppercase font-bold text-gray-400 tracking-widest">Contact Info</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li class="flex items-start gap-2">
+                             <svg class="mt-0.5 text-secondary" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                             Godawari-11, Chapagaon, Lalitpur
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="text-secondary" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            +977-9841382376
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold text-gray-600 tracking-widest uppercase">
+                <p>&copy; 2026 RS Graphic Design & Printing. All rights reserved.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterPortfolio(category) {
+            // Update active button style
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'text-secondary', 'border-b-2', 'border-secondary');
+                btn.classList.add('hover:text-primary');
+            });
+            event.target.classList.add('active', 'text-secondary', 'border-b-2', 'border-secondary');
+            event.target.classList.remove('hover:text-primary');
+
+            // Show/hide cards
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"], button[data-target^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href') || this.getAttribute('data-target');
+                if (targetId && targetId !== '#') {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const navOffset = 80;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navOffset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
